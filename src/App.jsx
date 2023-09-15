@@ -1,7 +1,7 @@
-import { data } from "autoprefixer";
-import "./App.css";
+import "./styles/styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Tracks from "./components/Tracks";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -51,7 +51,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center">
+    <div className="h-screen overflow-x-hidden no-scrollbar">
       {!token ? (
         <button
           type="button"
@@ -65,14 +65,9 @@ function App() {
       ) : (
         <button onClick={logout}>Logout</button>
       )}
-
-      {token && (
-        <div>
-          {tracks.map((track) => (
-            <p>[{track.name}]</p>
-          ))}
-        </div>
-      )}
+      <div className="h-screen flex flex-col space-y-8 items-center justify-center">
+        {token && <Tracks tracks={tracks} />}
+      </div>
     </div>
   );
 }
