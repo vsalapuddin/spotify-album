@@ -14,7 +14,7 @@ function App() {
   const [token, setToken] = useState("");
   const [tracks, setTracks] = useState([]);
   const [displayName, setDisplayName] = useState("");
-  const [albumCover, setAlbumCover] = useState("");
+  const [profilePic, setprofilePic] = useState("");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -56,7 +56,7 @@ function App() {
       });
 
       setDisplayName(data.display_name);
-      setAlbumCover(data.images[0].url);
+      setprofilePic(data.images[0].url);
     };
 
     fetchTopTracks();
@@ -83,13 +83,13 @@ function App() {
       ) : (
         <button onClick={logout}>Logout</button>
       )}
-      <div className="h-screen flex flex-col justify-center w-1/3">
+      <div className="h-screen flex flex-col justify-center w-100">
         {token && (
           <div>
             <Header
               tracks={tracks}
               displayName={displayName}
-              albumCover={albumCover}
+              profilePic={profilePic}
             />
             <Tracks tracks={tracks} />
           </div>
