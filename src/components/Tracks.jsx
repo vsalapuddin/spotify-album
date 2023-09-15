@@ -23,7 +23,7 @@ export default function Tracks({ tracks }) {
             <div className="flex flex-col items-center justify-center">
               <p className="text-sm font-bold text-gray-200">{index + 1}</p>
             </div>
-            {track.track?.album?.images[0]?.url && (
+            {track.album?.images[0]?.url && (
               <img
                 src={track.album.images[0].url}
                 className="h-10 w-10 rounded-md object-contain"
