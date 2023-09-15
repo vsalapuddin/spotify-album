@@ -13,6 +13,8 @@ function App() {
 
   const [token, setToken] = useState("");
   const [tracks, setTracks] = useState([]);
+  const [displayName, setDisplayName] = useState("");
+  const [albumCover, setAlbumCover] = useState("");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -44,7 +46,21 @@ function App() {
 
       setTracks(data.items);
     };
+
+    const fetchUserName = async () => {
+      const { data } = await axios.get("https://api.spotify.com/v1/me", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {},
+      });
+
+      setDisplayName(data.display_name);
+      setAlbumCover(data.images[0].url);
+    };
+
     fetchTopTracks();
+    fetchUserName();
   }, []);
 
   const logout = () => {
@@ -59,7 +75,7 @@ function App() {
           type="button"
           onClick={(e) => {
             e.preventDefault();
-            window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing+user-top-read`;
+            window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-private+user-read-email+user-top-read`;
           }}
         >
           Login to Spotify
@@ -70,7 +86,11 @@ function App() {
       <div className="h-screen flex flex-col justify-center w-1/3">
         {token && (
           <div>
-            <Header />
+            <Header
+              tracks={tracks}
+              displayName={displayName}
+              albumCover={albumCover}
+            />
             <Tracks tracks={tracks} />
           </div>
         )}
