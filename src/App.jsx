@@ -5,7 +5,7 @@ import Tracks from "./components/Tracks";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
-  const REDIRECT_URI = "http://localhost:5173/callback";
+  const REDIRECT_URI = "http://localhost:5173";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
