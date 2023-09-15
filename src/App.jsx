@@ -1,7 +1,9 @@
 import "./styles/styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 import Tracks from "./components/Tracks";
+import Header from "./components/Header";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -51,7 +53,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen overflow-x-hidden no-scrollbar">
+    <div className="h-screen flex flex-col items-center justify-center">
       {!token ? (
         <button
           type="button"
@@ -65,8 +67,13 @@ function App() {
       ) : (
         <button onClick={logout}>Logout</button>
       )}
-      <div className="h-screen flex flex-col space-y-8 items-center justify-center">
-        {token && <Tracks tracks={tracks} />}
+      <div className="h-screen flex flex-col justify-center w-1/3">
+        {token && (
+          <div>
+            <Header />
+            <Tracks tracks={tracks} />
+          </div>
+        )}
       </div>
     </div>
   );

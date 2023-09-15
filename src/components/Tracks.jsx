@@ -8,16 +8,21 @@ export default function Tracks({ tracks }) {
   }
 
   return (
-    <div className="">
+    <div className="flex flex-col items-stretch space-y-10">
       {tracks.slice(0, numSongs).map((track) => (
-        <div className="flex">
-          <p key={track.name}>{track.name}</p>
+        <div className="flex justify-between" key={track.name}>
+          <div>
+            <p>{track.name}</p>
+            {track.artists.map((artist, index) => (
+              <p className="text-xs" key={index}>
+                {artist.name}
+              </p>
+            ))}
+          </div>
 
-          {track.artists.map((artist) => (
-            <p>{artist.name}</p>
-          ))}
-
-          <p>{millisToMinutesAndSeconds(track.duration_ms)}</p>
+          <div className="">
+            <p>{millisToMinutesAndSeconds(track.duration_ms)}</p>
+          </div>
         </div>
       ))}
     </div>
