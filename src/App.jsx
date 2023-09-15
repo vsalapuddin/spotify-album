@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -27,6 +28,21 @@ function App() {
     }
 
     setToken(token);
+
+    const fetchTopTracks = async () => {
+      const { data } = await axios.get(
+        "https://api.spotify.com/v1/me/top/tracks",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {},
+        }
+      );
+
+      setTracks(data.items);
+    };
+    fetchTopTracks();
   }, []);
 
   const logout = () => {
@@ -34,34 +50,29 @@ function App() {
     window.localStorage.removeItem("token");
   };
 
-  const fetchTopTracks = async (e) => {
-    e.preventDefault();
-    const { data } = await axios.get(
-      "https://api.spotify.com/v1/me/top/tracks",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        params: {},
-      }
-    );
-
-    setTracks(data.items);
-    console.log(tracks);
-  };
-
   return (
-    <div className="h-56 grid grid-cols-3 gap-4 content-center">
+    <div className="h-screen flex flex-col space-y-8 items-center justify-center">
       {!token ? (
-        <a
-          href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing+user-top-read`}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-currently-playing+user-top-read`;
+          }}
         >
           Login to Spotify
-        </a>
+        </button>
       ) : (
         <button onClick={logout}>Logout</button>
       )}
-      <button onClick={fetchTopTracks}></button>
+
+      {token && (
+        <div>
+          {tracks.map((track) => (
+            <p>[{track.name}]</p>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
