@@ -88,14 +88,22 @@ function App() {
             <div className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-r rounded-sm bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
               <Tracks displayName={displayName} tracks={tracks} />
             </div>
-
-            <img
-              src={profilePic}
-              className="rounded-full "
-              width={640}
-              alt={"User Image"}
-              style={{ marginLeft: 230 }}
-            />
+            <div>
+              <img
+                src={"/public/assets/vinyl.jpg"}
+                className="rounded-full "
+                width={640}
+                alt={"User Image"}
+                style={{ marginLeft: 230 }}
+              />
+              {/* <img
+                src={profilePic}
+                className="rounded-full"
+                width={300}
+                alt={"User Image"}
+                style={{ marginLeft: 400, imageRendering: "pixelated" }}
+              /> */}
+            </div>
           </div>
         )}
       </div>

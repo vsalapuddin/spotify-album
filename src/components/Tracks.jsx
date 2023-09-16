@@ -15,7 +15,7 @@ export default function Tracks({ displayName, tracks }) {
 
   return (
     <div className="flex flex-col">
-      <h1 className="text-2xl font-bold text-gray-200">
+      <h1 className="text-xl font-bold text-gray-200">
         {displayName.split(" ")[0]}'s Debut Album
       </h1>
       <p className="flex flex-col text-sm font-bold text-gray-200">
