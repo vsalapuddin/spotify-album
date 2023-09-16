@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 import Tracks from "./components/Tracks";
-import Header from "./components/Header";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -69,7 +68,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center">
+    <div className="h-screen flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
       {!token ? (
         <button
           type="button"
@@ -83,15 +82,20 @@ function App() {
       ) : (
         <button onClick={logout}>Logout</button>
       )}
-      <div className="h-screen flex flex-col justify-center w-100">
+      <div className="h-screen flex flex-col justify-center">
         {token && (
-          <div>
-            <Header
-              tracks={tracks}
-              displayName={displayName}
-              profilePic={profilePic}
+          <div className="flex ">
+            <div className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-r rounded-sm bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+              <Tracks displayName={displayName} tracks={tracks} />
+            </div>
+
+            <img
+              src={profilePic}
+              className="rounded-full "
+              width={640}
+              alt={"User Image"}
+              style={{ marginLeft: 230 }}
             />
-            <Tracks tracks={tracks} />
           </div>
         )}
       </div>
