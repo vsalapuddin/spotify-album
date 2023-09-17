@@ -17,6 +17,7 @@ function App() {
   const [tracks, setTracks] = useState([]);
   const [displayName, setDisplayName] = useState("");
   const [profilePic, setprofilePic] = useState("");
+  const [albumName, setAlbumName] = useState("");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -58,6 +59,7 @@ function App() {
       });
 
       setDisplayName(data.display_name);
+      setAlbumName(`${data.display_name.split(" ")[0]}'s Debut Album`);
       setprofilePic(data.images[0].url);
     };
 
@@ -71,7 +73,7 @@ function App() {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
+    <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
       {!token ? (
         <button
           type="button"
@@ -83,18 +85,24 @@ function App() {
           Login to Spotify
         </button>
       ) : (
-        <button onClick={logout}>Logout</button>
+        <button className="self-end pr-8 pt-4" onClick={logout}>
+          Logout
+        </button>
       )}
-      <div className="h-screen flex flex-col justify-center">
+      <div className="flex flex-col justify-center pt-8">
         {token && (
           <div className="flex flex-col">
             <motion.div
               initial={{ x: -600 }}
               transition={{ duration: 2 }}
               whileInView={{ x: 0 }}
-              className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-l from-red-200 to-red-600"
+              className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-t from-green-300 via-blue-500 to-purple-600"
             >
-              <Tracks displayName={displayName} tracks={tracks} />
+              <Tracks
+                albumName={albumName}
+                displayName={displayName}
+                tracks={tracks}
+              />
             </motion.div>
             <div>
               <img
@@ -105,8 +113,10 @@ function App() {
                 style={{ marginLeft: 230 }}
               />
             </div>
-            <Score tracks={tracks} />
-            <Customize />
+            <div className="flex flex-col items-center">
+              <Score tracks={tracks} />
+              <Customize albumName={albumName} />
+            </div>
           </div>
         )}
       </div>

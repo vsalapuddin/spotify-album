@@ -1,4 +1,6 @@
-export default function Tracks({ displayName, tracks }) {
+import { useState } from "react";
+
+export default function Tracks({ albumName, tracks }) {
   let totalTime = 0;
 
   function millisToMinutesAndSeconds(millis) {
@@ -13,27 +15,20 @@ export default function Tracks({ displayName, tracks }) {
 
   return (
     <div className="flex flex-col">
-      <h1 className="text-xl font-bold text-gray-200">
-        {displayName.split(" ")[0]}'s Debut Album
-      </h1>
-      <p className="flex flex-col text-sm font-bold text-gray-200">
+      <h1 className="text-xl font-bold uppercase text-gray-200">{albumName}</h1>
+      <p className="flex flex-col text-sm font-bold text-gray-200 uppercase">
         Track List
       </p>
-      <p className="flex flex-col text-sm font-bold text-gray-200">
-        {millisToMinutesAndSeconds(totalTime)} min
-      </p>
+
       {tracks.slice(2, 9).map((track, index) => (
-        <div
-          key={track.name}
-          className="flex cursor-pointer  transition duration-300 hover:bg-white hover:bg-opacity-10"
-        >
+        <div key={track.name} className="flex">
           <div className="flex items-center space-x-5">
             <p className="text-sm font-bold text-gray-200">{index + 1}.</p>
             <div>
-              <p className="w-[8rem] font-bold text-gray-200 md:w-[15rem]">
+              <p className="w-[8rem] font-bold text-gray-200 md:w-[15rem] uppercase">
                 {track.name}
               </p>
-              <p className="w-[8rem] text-xs text-gray-300 sm:w-[10rem] md:w-[15rem]">
+              <p className="w-[8rem] text-xs text-gray-300 sm:w-[10rem] md:w-[15rem] uppercase">
                 {`(feat. ${track.artists
                   .map((artist) => artist.name)
                   .join(", ")})`}
