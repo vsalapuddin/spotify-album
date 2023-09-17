@@ -1,4 +1,4 @@
-export default function ChooseStyle() {
+export default function ChooseStyle({ albumStyleChanger }) {
   return (
     <div>
       <h1 className="mb-4 mt-4 self-start text-xl font-extrabold leading-none tracking-tight text-white">
@@ -7,6 +7,7 @@ export default function ChooseStyle() {
       <ul class="grid w-full gap-6 md:grid-cols-5">
         <li>
           <input
+            onChange={() => albumStyleChanger("vibrant")}
             type="radio"
             id="hosting-small"
             name="hosting"
@@ -25,6 +26,7 @@ export default function ChooseStyle() {
         </li>
         <li>
           <input
+            onChange={() => albumStyleChanger("minimalist")}
             type="radio"
             id="hosting-big"
             name="hosting"
@@ -42,6 +44,7 @@ export default function ChooseStyle() {
         </li>
         <li>
           <input
+            onChange={() => albumStyleChanger("neon")}
             type="radio"
             id="3"
             name="hosting"
@@ -60,6 +63,7 @@ export default function ChooseStyle() {
         </li>
         <li>
           <input
+            onChange={() => albumStyleChanger("filmic")}
             type="radio"
             id="4"
             name="hosting"

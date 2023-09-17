@@ -20,6 +20,7 @@ function App() {
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
+  const [albumCover, setAlbumCover] = useState("vibrant");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -96,7 +97,7 @@ function App() {
               initial={{ x: -600 }}
               transition={{ duration: 2 }}
               whileInView={{ x: 0 }}
-              className="flex flex-col justify-center absolute bg-[url('../public/assets/minimalist.jpg')] h-80 w-80 pt-72 pb-72 pr-72 pl-80"
+              className={`flex flex-col justify-center absolute bg-[url('/assets/${albumCover}.jpg')] h-80 w-80 pt-72 pb-72 pr-72 pl-80`}
             >
               <div className="self-end">
                 <Tracks
@@ -106,9 +107,8 @@ function App() {
                 />
               </div>
             </motion.div>
-
             <img
-              src={"/public/assets/vinyl.jpg"}
+              src={"/assets/vinyl.jpg"}
               className="rounded-full "
               width={575}
               alt={"User Image"}
@@ -119,6 +119,7 @@ function App() {
               <Customize
                 albumName={albumName}
                 albumNameChanger={setAlbumName}
+                albumStyleChanger={setAlbumCover}
                 timeLengthChanger={setTermLength}
               />
             </div>
