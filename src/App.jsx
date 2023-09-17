@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
+import TopTracks from "./components/TopTracks";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -19,10 +20,6 @@ function App() {
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-
-  // short_term 4 weeks
-  // medium_term 6 weeks
-  // long_term All Time
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -99,18 +96,21 @@ function App() {
               initial={{ x: -600 }}
               transition={{ duration: 2 }}
               whileInView={{ x: 0 }}
-              className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-t from-green-300 via-blue-500 to-purple-600"
+              className="flex flex-col justify-center absolute bg-[url('../public/assets/minimalist.jpg')] h-80 w-80 pt-72 pb-72 pr-72 pl-80"
             >
-              <Tracks
-                albumName={albumName}
-                displayName={displayName}
-                tracks={tracks}
-              />
+              <div className="self-end">
+                <Tracks
+                  albumName={albumName}
+                  displayName={displayName}
+                  tracks={tracks}
+                />
+              </div>
             </motion.div>
+
             <img
               src={"/public/assets/vinyl.jpg"}
               className="rounded-full "
-              width={640}
+              width={575}
               alt={"User Image"}
               style={{ marginLeft: 230 }}
             />
