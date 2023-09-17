@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
-import TopTracks from "./components/TopTracks";
+import Header from "./components/Header";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -88,11 +88,9 @@ function App() {
           Login to Spotify
         </button>
       ) : (
-        <div className="flex flex-col justify-center pt-8">
-          <button className="self-end pr-8 pt-4" onClick={logout}>
-            Logout
-          </button>
-          <div className="flex flex-col">
+        <div>
+          <Header logout={logout} />
+          <div className="flex flex-col items-center pt-10">
             <motion.div
               initial={{ x: -600 }}
               transition={{ duration: 2 }}
