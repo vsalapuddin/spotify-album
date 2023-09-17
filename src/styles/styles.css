@@ -24,10 +24,3 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
-.rounded-half-circle {
-  width: 200px; /* Half of the original width */
-  height: 400px; /* Keep the original height */
-  overflow: hidden;
-  border-radius: 200px 200px 0 0; /* Adjust the border radius to create a half circle */
-}

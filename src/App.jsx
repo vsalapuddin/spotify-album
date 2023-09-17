@@ -1,8 +1,11 @@
 import "./styles/styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
+import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
+import Score from "./components/Score";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -84,10 +87,15 @@ function App() {
       )}
       <div className="h-screen flex flex-col justify-center">
         {token && (
-          <div className="flex ">
-            <div className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-r rounded-sm bg-gradient-to-r from-rose-500 via-red-400 to-red-500">
+          <div className="flex flex-col">
+            <motion.div
+              initial={{ x: -600 }}
+              transition={{ duration: 2 }}
+              whileInView={{ x: 0 }}
+              className="p-80 w-80 h-80 absolute flex flex-col items-end justify-center bg-gradient-to-l from-red-200 to-red-600"
+            >
               <Tracks displayName={displayName} tracks={tracks} />
-            </div>
+            </motion.div>
             <div>
               <img
                 src={"/public/assets/vinyl.jpg"}
@@ -96,14 +104,9 @@ function App() {
                 alt={"User Image"}
                 style={{ marginLeft: 230 }}
               />
-              {/* <img
-                src={profilePic}
-                className="rounded-full"
-                width={300}
-                alt={"User Image"}
-                style={{ marginLeft: 400, imageRendering: "pixelated" }}
-              /> */}
             </div>
+            <Score tracks={tracks} />
+            <Customize />
           </div>
         )}
       </div>

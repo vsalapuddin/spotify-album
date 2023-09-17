@@ -1,13 +1,11 @@
 export default function Tracks({ displayName, tracks }) {
-  const numSongs = 7;
+  let totalTime = 0;
 
   function millisToMinutesAndSeconds(millis) {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   }
-
-  let totalTime = 0;
 
   tracks.slice(0, 7).forEach((num) => {
     totalTime += num.duration_ms;
