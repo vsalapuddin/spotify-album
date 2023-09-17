@@ -14,9 +14,9 @@ export default function Score({ tracks }) {
   }
 
   return (
-    <div className="flex items-center p-5">
+    <div className="flex items-center p-5 text-white">
       <motion.div
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 1 }}
         whileInView={{
           background: `conic-gradient(rgb(245,255,250) ${calculateScore(
             tracks
@@ -28,7 +28,7 @@ export default function Score({ tracks }) {
           {calculateScore(tracks)}
         </div>
       </motion.div>
-      Niche Score
+      <h1>Niche Score</h1>
     </div>
   );
 }

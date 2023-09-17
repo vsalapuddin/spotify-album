@@ -18,6 +18,11 @@ function App() {
   const [displayName, setDisplayName] = useState("");
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
+  const [termLength, setTermLength] = useState("medium");
+
+  // short_term 4 weeks
+  // medium_term 6 weeks
+  // long_term All Time
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -38,7 +43,7 @@ function App() {
 
     const fetchTopTracks = async () => {
       const { data } = await axios.get(
-        "https://api.spotify.com/v1/me/top/tracks",
+        `https://api.spotify.com/v1/me/top/tracks?time_range=${termLength}_term`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -65,7 +70,7 @@ function App() {
 
     fetchTopTracks();
     fetchUserName();
-  }, []);
+  }, [termLength]);
 
   const logout = () => {
     setToken("");
@@ -73,7 +78,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-gray-600 bg-gradient-to-r">
+    <div className="flex flex-col items-center bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
       {!token ? (
         <button
           type="button"
@@ -85,12 +90,10 @@ function App() {
           Login to Spotify
         </button>
       ) : (
-        <button className="self-end pr-8 pt-4" onClick={logout}>
-          Logout
-        </button>
-      )}
-      <div className="flex flex-col justify-center pt-8">
-        {token && (
+        <div className="flex flex-col justify-center pt-8">
+          <button className="self-end pr-8 pt-4" onClick={logout}>
+            Logout
+          </button>
           <div className="flex flex-col">
             <motion.div
               initial={{ x: -600 }}
@@ -104,22 +107,24 @@ function App() {
                 tracks={tracks}
               />
             </motion.div>
-            <div>
-              <img
-                src={"/public/assets/vinyl.jpg"}
-                className="rounded-full "
-                width={640}
-                alt={"User Image"}
-                style={{ marginLeft: 230 }}
-              />
-            </div>
+            <img
+              src={"/public/assets/vinyl.jpg"}
+              className="rounded-full "
+              width={640}
+              alt={"User Image"}
+              style={{ marginLeft: 230 }}
+            />
             <div className="flex flex-col items-center">
               <Score tracks={tracks} />
-              <Customize albumName={albumName} />
+              <Customize
+                albumName={albumName}
+                albumNameChanger={setAlbumName}
+                timeLengthChanger={setTermLength}
+              />
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -20,7 +20,7 @@ export default function Tracks({ albumName, tracks }) {
         Track List
       </p>
 
-      {tracks.slice(2, 9).map((track, index) => (
+      {tracks.slice(0, 7).map((track, index) => (
         <div key={track.name} className="flex">
           <div className="flex items-center space-x-5">
             <p className="text-sm font-bold text-gray-200">{index + 1}.</p>

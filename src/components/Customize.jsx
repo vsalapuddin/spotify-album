@@ -1,4 +1,12 @@
-export default function Customize({ albumName }) {
+export default function Customize({
+  albumName,
+  albumNameChanger,
+  timeLengthChanger,
+}) {
+  const handleChange = (event) => {
+    albumNameChanger(event.target.value);
+  };
+
   return (
     <div className="flex flex-col items-center">
       <h1 className="mb-4 text-5xl font-extrabold leading-none tracking-tight text-white">
@@ -10,6 +18,7 @@ export default function Customize({ albumName }) {
       <ul class="grid w-full gap-6 md:grid-cols-3">
         <li>
           <input
+            onChange={() => timeLengthChanger("short")}
             type="radio"
             id="4weeks"
             name="topTracks"
@@ -28,6 +37,7 @@ export default function Customize({ albumName }) {
         </li>
         <li>
           <input
+            onChange={() => timeLengthChanger("medium")}
             type="radio"
             id="6weeks"
             name="topTracks"
@@ -45,6 +55,7 @@ export default function Customize({ albumName }) {
         </li>
         <li>
           <input
+            onChange={() => timeLengthChanger("long")}
             type="radio"
             id="allTime"
             name="topTracks"
@@ -165,6 +176,7 @@ export default function Customize({ albumName }) {
         </label>
         <input
           value={albumName}
+          onChange={handleChange}
           type="text"
           id="default-input"
           class="mt-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
