@@ -12,28 +12,27 @@ export default function Tracks({ albumName, tracks }) {
   });
 
   return (
-    <div>
-      <h1 className="text-xl font-bold uppercase text-black">{albumName}</h1>
-      <p className="flex flex-col text-sm font-bold text-black uppercase">
+    <div className="p-2 rounded-lg">
+      <p className="flex flex-col text-sm font-bold text-white uppercase">
         Track List
       </p>
 
       {tracks.slice(0, 7).map((track, index) => (
         <div key={track.name} className="flex">
           <div className="flex space-x-2">
-            <p className="text-sm font-bold text-black">{index + 1}.</p>
+            <p className="text-sm font-bold text-white">{index + 1}.</p>
             <div>
-              <p className=" font-bold text-black uppercase">{track.name}</p>
-              <p className="w-[10rem] text-xs text-black  md:w-[15rem] uppercase">
+              <p className=" font-bold text-white uppercase">{track.name}</p>
+              <p className="w-[10rem] text-xs text-white  md:w-[15rem] uppercase">
                 {`(feat. ${track.artists
                   .map((artist) => artist.name)
                   .join(", ")})`}
               </p>
             </div>
           </div>
-          <p className="text-sm text-black">
+          {/* <p className="text-sm text-white">
             {millisToMinutesAndSeconds(track.duration_ms ?? 0)}
-          </p>
+          </p> */}
         </div>
       ))}
     </div>

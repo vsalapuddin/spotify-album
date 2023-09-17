@@ -7,6 +7,10 @@ import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
 import Header from "./components/Header";
+import Dreamy from "./components/AlbumStyles/Dreamy";
+import Minimalist from "./components/AlbumStyles/Minimalist";
+import Neon from "./components/AlbumStyles/Neon";
+import Filmic from "./components/AlbumStyles/Filmic";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -20,7 +24,7 @@ function App() {
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-  const [albumCover, setAlbumCover] = useState("vibrant");
+  const [albumCover, setAlbumCover] = useState("dreamy");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -76,7 +80,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+    <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
       {!token ? (
         <button
           type="button"
@@ -90,28 +94,40 @@ function App() {
       ) : (
         <div>
           <Header logout={logout} />
-          <div className="flex flex-col items-center pt-10">
-            <motion.div
-              initial={{ x: -600 }}
-              transition={{ duration: 2 }}
-              whileInView={{ x: 0 }}
-              className={`flex flex-col justify-center absolute bg-[url('/assets/${albumCover}.jpg')] h-80 w-80 pt-72 pb-72 pr-72 pl-80`}
-            >
-              <div className="self-end">
-                <Tracks
-                  albumName={albumName}
-                  displayName={displayName}
-                  tracks={tracks}
-                />
-              </div>
-            </motion.div>
-            <img
-              src={"/assets/vinyl.jpg"}
-              className="rounded-full "
-              width={575}
-              alt={"User Image"}
-              style={{ marginLeft: 230 }}
+          {albumCover === "dreamy" && (
+            <Dreamy
+              albumCover={albumCover}
+              albumName={albumName}
+              displayName={displayName}
+              tracks={tracks}
             />
+          )}
+          {albumCover === "minimalist" && (
+            <Minimalist
+              albumCover={albumCover}
+              albumName={albumName}
+              displayName={displayName}
+              tracks={tracks}
+            />
+          )}
+          {albumCover === "neon" && (
+            <Neon
+              albumCover={albumCover}
+              albumName={albumName}
+              displayName={displayName}
+              tracks={tracks}
+            />
+          )}
+          {albumCover === "filmic" && (
+            <Filmic
+              albumCover={albumCover}
+              albumName={albumName}
+              displayName={displayName}
+              tracks={tracks}
+            />
+          )}
+
+          <div className="flex flex-col items-center pt-10">
             <div className="flex flex-col items-center">
               <Score tracks={tracks} />
               <Customize
