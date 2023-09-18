@@ -10,7 +10,7 @@ export default function Score({ tracks }) {
       count++;
     });
 
-    return total / count;
+    return 100 - total / count;
   }
 
   return (

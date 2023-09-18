@@ -1,4 +1,4 @@
-export default function Tracks({ albumName, tracks }) {
+export default function Tracks({ tracks }) {
   let totalTime = 0;
 
   function millisToMinutesAndSeconds(millis) {

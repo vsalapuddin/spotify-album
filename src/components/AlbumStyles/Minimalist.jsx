@@ -7,7 +7,7 @@ export default function Minimalist({ albumName, displayName, tracks }) {
     <div className="flex flex-col items-center pt-10">
       <motion.div
         initial={{ x: -600 }}
-        transition={{ duration: 2 }}
+        transition={{ duration: 1 }}
         whileInView={{ x: 0 }}
         className={`flex flex-col rounded-sm absolute bg-[url('/assets/minimalist.jpg')] h-[575px] w-[600px]`}
       >
@@ -24,11 +24,11 @@ export default function Minimalist({ albumName, displayName, tracks }) {
         </div>
       </motion.div>
       <img
-        src={"/assets/vinyl.jpg"}
+        src={"/assets/normal.png"}
         className="rounded-full "
         width={575}
         alt={"User Image"}
-        style={{ marginLeft: 420 }}
+        style={{ marginLeft: 500 }}
       />
       <div className="flex flex-col items-center"></div>
     </div>

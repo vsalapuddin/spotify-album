@@ -24,11 +24,11 @@ export default function Dreamy({ albumName, displayName, tracks }) {
         </div>
       </motion.div>
       <img
-        src={"/assets/vinyl.jpg"}
+        src={"/assets/vibrant-vinyl.png"}
         className="rounded-full "
         width={575}
         alt={"User Image"}
-        style={{ marginLeft: 420 }}
+        style={{ marginLeft: 475 }}
       />
       <div className="flex flex-col items-center"></div>
     </div>
