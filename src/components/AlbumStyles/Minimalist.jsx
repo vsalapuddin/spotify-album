@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import Tracks from "../Tracks";
+import Score from "../Score";
 
 export default function Minimalist({ albumName, displayName, tracks }) {
   return (
@@ -15,13 +16,14 @@ export default function Minimalist({ albumName, displayName, tracks }) {
           {albumName}
         </h1>
 
-        <div className="self-start pl-10 pt-12">
+        <div className="self-center pl-10 pt-12">
           <Tracks
             albumName={albumName}
             displayName={displayName}
             tracks={tracks}
           />
         </div>
+        <Score tracks={tracks} />
       </motion.div>
       <img
         src={"/assets/normal.png"}

@@ -7,10 +7,10 @@ import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
 import Header from "./components/Header";
-import Dreamy from "./components/AlbumStyles/Dreamy";
+import Eclipse from "./components/AlbumStyles/Eclipse";
 import Minimalist from "./components/AlbumStyles/Minimalist";
 import Neon from "./components/AlbumStyles/Neon";
-import Filmic from "./components/AlbumStyles/Filmic";
+import Whimsical from "./components/AlbumStyles/Whimsical";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -24,7 +24,7 @@ function App() {
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-  const [albumCover, setAlbumCover] = useState("dreamy");
+  const [albumCover, setAlbumCover] = useState("Eclipse");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -94,8 +94,8 @@ function App() {
       ) : (
         <div>
           <Header logout={logout} />
-          {albumCover === "dreamy" && (
-            <Dreamy
+          {albumCover === "Eclipse" && (
+            <Eclipse
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}
@@ -118,8 +118,8 @@ function App() {
               tracks={tracks}
             />
           )}
-          {albumCover === "filmic" && (
-            <Filmic
+          {albumCover === "Whimsical" && (
+            <Whimsical
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}

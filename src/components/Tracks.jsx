@@ -1,16 +1,4 @@
 export default function Tracks({ tracks }) {
-  let totalTime = 0;
-
-  function millisToMinutesAndSeconds(millis) {
-    var minutes = Math.floor(millis / 60000);
-    var seconds = ((millis % 60000) / 1000).toFixed(0);
-    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-  }
-
-  tracks.slice(0, 7).forEach((num) => {
-    totalTime += num.duration_ms;
-  });
-
   return (
     <div className="p-2 rounded-lg">
       <p className="flex flex-col text-sm font-bold text-white uppercase">
@@ -30,9 +18,6 @@ export default function Tracks({ tracks }) {
               </p>
             </div>
           </div>
-          {/* <p className="text-sm text-white">
-            {millisToMinutesAndSeconds(track.duration_ms ?? 0)}
-          </p> */}
         </div>
       ))}
     </div>
