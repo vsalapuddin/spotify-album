@@ -10,7 +10,7 @@ export default function Minimalist({ albumName, displayName, tracks }) {
         initial={{ x: -600 }}
         transition={{ duration: 1 }}
         whileInView={{ x: 0 }}
-        className={`flex flex-col rounded-sm absolute bg-[url('/assets/minimalist.jpg')] h-[575px] w-[600px]`}
+        className={`flex flex-col rounded-sm absolute bg-[url('/assets/minimalist.jpg')] h-[563px] w-[563px]`}
       >
         <h1 className="whitespace-nowrap self-center text-2xl font-bold uppercase text-white pt-6">
           {albumName}
@@ -26,7 +26,7 @@ export default function Minimalist({ albumName, displayName, tracks }) {
         <Score tracks={tracks} textColor={"black"} />
       </motion.div>
       <img
-        src={"/assets/normal.png"}
+        src={"/assets/white-vinyl.png"}
         className="rounded-full "
         width={575}
         alt={"User Image"}

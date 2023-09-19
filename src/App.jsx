@@ -7,7 +7,7 @@ import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
 import Header from "./components/Header";
-import Eclipse from "./components/AlbumStyles/Eclipse";
+import Galaxy from "./components/AlbumStyles/Galaxy";
 import Minimalist from "./components/AlbumStyles/Minimalist";
 import Neon from "./components/AlbumStyles/Neon";
 import Whimsical from "./components/AlbumStyles/Whimsical";
@@ -24,7 +24,7 @@ function App() {
   const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-  const [albumCover, setAlbumCover] = useState("Eclipse");
+  const [albumCover, setAlbumCover] = useState("Galaxy");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -94,8 +94,8 @@ function App() {
       ) : (
         <div>
           <Header logout={logout} />
-          {albumCover === "Eclipse" && (
-            <Eclipse
+          {albumCover === "Galaxy" && (
+            <Galaxy
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}
@@ -129,7 +129,6 @@ function App() {
 
           <div className="flex flex-col items-center pt-10">
             <div className="flex flex-col items-center">
-              <Score tracks={tracks} />
               <Customize
                 albumName={albumName}
                 albumNameChanger={setAlbumName}

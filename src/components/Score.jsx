@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Score({ tracks }) {
+export default function Score({ textColor, tracks }) {
   function calculateScore(tracks) {
     let total = 0;
     let count = 0;
@@ -14,7 +14,7 @@ export default function Score({ tracks }) {
   }
 
   return (
-    <div className="flex items-center p-5 text-white">
+    <div className="flex items-center p-5">
       <motion.div
         transition={{ duration: 1 }}
         whileInView={{
@@ -24,11 +24,14 @@ export default function Score({ tracks }) {
         }}
         className="w-24 h-24 mr-3 flex items-center justify-center rounded-full"
       >
-        <div className="p-2 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-t from-green-300 via-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+        <div
+          className="p-2 w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center"
+          style={{ background: "black" }}
+        >
           {calculateScore(tracks)}
         </div>
       </motion.div>
-      <h1>Niche Score</h1>
+      <h1 className="text-sm font-bold uppercase">Niche Score</h1>
     </div>
   );
 }

@@ -26,11 +26,11 @@ export default function Whimsical({ albumName, displayName, tracks }) {
         <Score tracks={tracks} textColor={"black"} />
       </motion.div>
       <img
-        src={"/assets/green-vinyl.png"}
+        src={"/assets/orange-vinyl.png"}
         className="rounded-full "
-        width={555}
+        width={575}
         alt={"User Image"}
-        style={{ marginLeft: 475 }}
+        style={{ marginLeft: 500 }}
       />
 
       <div className="flex flex-col items-center"></div>
