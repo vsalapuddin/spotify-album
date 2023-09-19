@@ -23,7 +23,7 @@ export default function Minimalist({ albumName, displayName, tracks }) {
             tracks={tracks}
           />
         </div>
-        <Score tracks={tracks} />
+        <Score tracks={tracks} textColor={"black"} />
       </motion.div>
       <img
         src={"/assets/normal.png"}
