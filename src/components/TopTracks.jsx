@@ -1,10 +1,10 @@
 export default function TopTracks({ timeLengthChanger }) {
   return (
     <div className="flex flex-col self-start">
-      <h1 className="mb-4 self-start text-xl font-extrabold leading-none tracking-tight text-white">
+      <h1 className="mb-4 self-start text-md md:text-xl font-extrabold leading-none tracking-tight text-white">
         Include top tracks from
       </h1>
-      <ul class="grid w-full gap-6 md:grid-cols-3">
+      <ul class="grid w-full gap-6 grid-cols-3">
         <li>
           <input
             onChange={() => timeLengthChanger("short")}
@@ -17,7 +17,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="4weeks"
-            class="inline-flex items-center justify-between w-full p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">4 Weeks</div>
@@ -35,7 +35,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="6weeks"
-            class="inline-flex items-center justify-between w-full p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">6 Weeks</div>
@@ -54,7 +54,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="allTime"
-            class="inline-flex items-center justify-between w-full p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">All Time</div>

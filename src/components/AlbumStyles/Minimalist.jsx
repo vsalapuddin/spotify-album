@@ -10,27 +10,27 @@ export default function Minimalist({ albumName, displayName, tracks }) {
         initial={{ x: -600 }}
         transition={{ duration: 1 }}
         whileInView={{ x: 0 }}
-        className={`flex flex-col rounded-sm absolute bg-[url('/assets/minimalist.jpg')] h-[563px] w-[563px]`}
+        className={`flex flex-col rounded-sm absolute bg-[url('/assets/minimalist.jpg')]  h-[300px] w-[300px] md:h-[563px] md:w-[563px]`}
       >
-        <h1 className="whitespace-nowrap self-center text-2xl font-bold uppercase text-white pt-6">
+        <h1 className="whitespace-nowrap self-centertext-sm md:text-2xl font-bold uppercase text-white pt-6">
           {albumName}
         </h1>
 
-        <div className="self-center pl-10 pt-12">
+        <div className="self-center pl-2 md:pl-10 pt-2 md:pt-12">
           <Tracks
             albumName={albumName}
             displayName={displayName}
             tracks={tracks}
           />
         </div>
-        <Score tracks={tracks} textColor={"black"} />
+        <div className="flex md:justify-start justify-end">
+          <Score tracks={tracks} textColor={"black"} />
+        </div>
       </motion.div>
       <img
         src={"/assets/white-vinyl.png"}
-        className="rounded-full "
-        width={575}
-        alt={"User Image"}
-        style={{ marginLeft: 500 }}
+        className="rounded-full w-[250px] md:w-[500px] flex self-end md:ml-[500px]"
+        alt={"Vinyl"}
       />
       <div className="flex flex-col items-center"></div>
     </div>

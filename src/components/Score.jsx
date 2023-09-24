@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function Score({ textColor, tracks }) {
+export default function Score({ tracks }) {
   function calculateScore(tracks) {
     let total = 0;
     let count = 0;
@@ -14,7 +14,7 @@ export default function Score({ textColor, tracks }) {
   }
 
   return (
-    <div className="flex items-center p-5">
+    <div className="flex items-center">
       <motion.div
         transition={{ duration: 1 }}
         whileInView={{
@@ -22,7 +22,7 @@ export default function Score({ textColor, tracks }) {
             tracks
           )}%, transparent ${calculateScore(tracks)}%)`,
         }}
-        className="w-24 h-24 mr-3 flex items-center justify-center rounded-full"
+        className="w-14 h-14 md:w-24 md:h-24 mr-3 flex items-center justify-center rounded-full"
       >
         <div
           className="p-2 w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center"

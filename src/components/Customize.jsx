@@ -13,7 +13,7 @@ export default function Customize({
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="mb-4 text-5xl font-extrabold leading-none tracking-tight text-white">
+      <h1 className="mb-4 md:mt-10 md:text-5xl text-4xl font-extrabold leading-none tracking-tight text-white">
         Customize
       </h1>
       <TopTracks
@@ -24,7 +24,7 @@ export default function Customize({
       <div class="mb-6 mt-4 self-start">
         <label
           for="default-input"
-          class="text-xl font-extrabold leading-none tracking-tight text-white"
+          class="text-md md:text-xl font-extrabold leading-none tracking-tight text-white"
         >
           Name your album
         </label>

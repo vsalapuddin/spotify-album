@@ -127,7 +127,7 @@ function App() {
             />
           )}
 
-          <div className="flex flex-col items-center pt-10">
+          <div className="flex flex-col items-center md:pt-10 pt-20">
             <div className="flex flex-col items-center">
               <Customize
                 albumName={albumName}
