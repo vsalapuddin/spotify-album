@@ -17,7 +17,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="4weeks"
-            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">4 Weeks</div>
@@ -35,7 +35,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="6weeks"
-            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">6 Weeks</div>
@@ -54,7 +54,7 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="allTime"
-            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-green-400 peer-checked:text-green-400 text-gray-400 bg-gray-800 hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-lg font-semibold">All Time</div>

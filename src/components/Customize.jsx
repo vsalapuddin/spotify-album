@@ -34,7 +34,7 @@ export default function Customize({
           maxLength="30"
           type="text"
           id="default-input"
-          class="mt-4 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-800  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="mt-4 border text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-[#1DB954] w-full p-2.5 bg-gray-800"
         />
       </div>
     </div>

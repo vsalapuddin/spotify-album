@@ -7,9 +7,9 @@ import Customize from "./components/Customize";
 import Tracks from "./components/Tracks";
 import Score from "./components/Score";
 import Header from "./components/Header";
-import Galaxy from "./components/AlbumStyles/Galaxy";
-import Minimalist from "./components/AlbumStyles/Minimalist";
-import Neon from "./components/AlbumStyles/Neon";
+import NeonCity from "./components/AlbumStyles/NeonCity";
+import Beach from "./components/AlbumStyles/Beach";
+import Fantasy from "./components/AlbumStyles/Fantasy";
 import Whimsical from "./components/AlbumStyles/Whimsical";
 
 function App() {
@@ -21,10 +21,9 @@ function App() {
   const [token, setToken] = useState("");
   const [tracks, setTracks] = useState([]);
   const [displayName, setDisplayName] = useState("");
-  const [profilePic, setprofilePic] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-  const [albumCover, setAlbumCover] = useState("Galaxy");
+  const [albumCover, setAlbumCover] = useState("NeonCity");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -82,36 +81,45 @@ function App() {
   return (
     <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
       {!token ? (
-        <button
-          type="button"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-private+user-read-email+user-top-read`;
-          }}
-        >
-          Login to Spotify
-        </button>
+        <div className="flex flex-col h-screen items-center justify-center">
+          <h1 class="text-6xl font-extrabold p-6">Debutify</h1>
+          <p class="text-lg p-2">Create your debut album!</p>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-private+user-read-email+user-top-read`;
+            }}
+            className=" text-center inline-flex items-center bg-transparent hover:bg-white text-[#1DB954] font-semibold  py-2 px-4 border border-[#1DB954] hover:border-transparent rounded"
+          >
+            <span> Login to Spotify</span>
+            <img
+              className="ml-4 h-10 w-10"
+              src="/public/assets/arrow.png"
+            ></img>
+          </button>
+        </div>
       ) : (
         <div>
           <Header logout={logout} />
-          {albumCover === "Galaxy" && (
-            <Galaxy
+          {albumCover === "NeonCity" && (
+            <NeonCity
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}
               tracks={tracks}
             />
           )}
-          {albumCover === "minimalist" && (
-            <Minimalist
+          {albumCover === "Beach" && (
+            <Beach
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}
               tracks={tracks}
             />
           )}
-          {albumCover === "neon" && (
-            <Neon
+          {albumCover === "Fantasy" && (
+            <Fantasy
               albumCover={albumCover}
               albumName={albumName}
               displayName={displayName}

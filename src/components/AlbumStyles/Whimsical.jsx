@@ -29,7 +29,7 @@ export default function Whimsical({ albumName, displayName, tracks }) {
       </motion.div>
       <img
         src={"/assets/orange-vinyl.png"}
-        className="rounded-full w-[250px] md:w-[500px] flex self-end md:ml-[500px]"
+        className="rounded-full w-[250px] md:w-[500px] flex md:ml-[500px]"
         alt={"Vinyl"}
       />
 

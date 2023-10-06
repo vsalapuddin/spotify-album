@@ -7,7 +7,7 @@ export default function ChooseStyle({ albumStyleChanger }) {
       <ul class="grid w-full gap-6 grid-cols-5">
         <li>
           <input
-            onChange={() => albumStyleChanger("Galaxy")}
+            onChange={() => albumStyleChanger("NeonCity")}
             type="radio"
             id="hosting-small"
             name="hosting"
@@ -17,16 +17,16 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="hosting-small"
-            class="inline-flex items-center justify-between w-full p-2 md:p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
-              <div class="w-full text-lg font-semibold">Galaxy</div>
+              <div class="w-full text-lg font-semibold">Neon City</div>
             </div>
           </label>
         </li>
         <li>
           <input
-            onChange={() => albumStyleChanger("minimalist")}
+            onChange={() => albumStyleChanger("Beach")}
             type="radio"
             id="hosting-big"
             name="hosting"
@@ -35,16 +35,16 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="hosting-big"
-            class="inline-flex items-center justify-between w-full p-2 md:p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
-              <div class="w-full text-lg font-semibold">Minimalist</div>
+              <div class="w-full text-lg font-semibold">Beach</div>
             </div>
           </label>
         </li>
         <li>
           <input
-            onChange={() => albumStyleChanger("neon")}
+            onChange={() => albumStyleChanger("Fantasy")}
             type="radio"
             id="3"
             name="hosting"
@@ -54,10 +54,10 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="3"
-            class="inline-flex w-full p-2 md:p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
-              <div class="text-sm md:text-lg font-semibold">Neon</div>
+              <div class="text-sm md:text-lg font-semibold">Fantasy</div>
             </div>
           </label>
         </li>
@@ -73,7 +73,7 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="4"
-            class="inline-flex w-full p-2 md:p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700"
+            class="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
             <div class="block">
               <div class="w-full text-sm font-semibold">Whimsical</div>
