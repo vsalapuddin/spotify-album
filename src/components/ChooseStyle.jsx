@@ -1,28 +1,26 @@
 export default function ChooseStyle({ albumStyleChanger }) {
   return (
-    <div>
+    <div className="flex flex-col self-start">
       <h1 className="mb-4 mt-4 self-start text-md md:text-xl font-extrabold leading-none tracking-tight text-white">
         Choose a style
       </h1>
-      <ul className="grid w-full gap-6 grid-cols-5">
+      <ul className="grid w-full gap-4 md:grid-cols-4 grid-cols-2">
         <li>
           <input
             onChange={() => albumStyleChanger("NeonCity")}
             type="radio"
-            id="hosting-small"
+            id="city"
             name="hosting"
-            value="hosting-small"
+            value="city"
             className="hidden peer"
             required
             defaultChecked
           />
           <label
-            for="hosting-small"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            for="city"
+            className="w-full inline-flex p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-lg font-semibold">Neon City</div>
-            </div>
+            <div className="text-[12px] md:text-lg font-semibold">City</div>
           </label>
         </li>
         <li>
@@ -36,11 +34,9 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="hosting-big"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="w-full inline-flex p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-lg font-semibold">Beach</div>
-            </div>
+            <div className="text-[12px] md:text-lg font-semibold">Beach</div>
           </label>
         </li>
         <li>
@@ -55,11 +51,9 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="3"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="w-full inline-flex p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="text-sm md:text-lg font-semibold">Fantasy</div>
-            </div>
+            <div className="text-[12px] md:text-lg font-semibold">Fantasy</div>
           </label>
         </li>
         <li>
@@ -74,10 +68,10 @@ export default function ChooseStyle({ albumStyleChanger }) {
           />
           <label
             for="4"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="inline-flex p-2 md:p-5 w-full border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-sm font-semibold">Whimsical</div>
+            <div className="text-[12px] md:text-lg font-semibold">
+              Whimsical
             </div>
           </label>
         </li>

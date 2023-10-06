@@ -17,10 +17,10 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="4weeks"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="inline-flex items-center justify-between w-full p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-lg font-semibold">4 Weeks</div>
+            <div className="w-full text-[12px] md:text-lg font-semibold">
+              4 Weeks
             </div>
           </label>
         </li>
@@ -36,10 +36,10 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="6weeks"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="inline-flex items-center justify-between w-full p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-lg font-semibold">6 Weeks</div>
+            <div className="w-full text-[12px] md:text-lg font-semibold">
+              6 Weeks
             </div>
           </label>
         </li>
@@ -55,10 +55,10 @@ export default function TopTracks({ timeLengthChanger }) {
           />
           <label
             for="allTime"
-            className="inline-flex items-center justify-between w-full p-3 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
+            className="inline-flex items-center justify-between w-full p-2 md:p-5 border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="block">
-              <div className="w-full text-lg font-semibold">All Time</div>
+            <div className="w-full text-[12px] md:text-lg font-semibold">
+              All Time
             </div>
           </label>
         </li>

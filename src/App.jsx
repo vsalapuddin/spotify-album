@@ -78,19 +78,26 @@ function App() {
     <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black h-screen">
       {!token ? (
         <div className="flex flex-col h-screen items-center justify-center">
-          <h1 className="text-6xl font-extrabold p-6">Debutify</h1>
-          <p className="text-lg p-2">Create your debut album!</p>
+          <h1
+            data-text="Debutify"
+            class="text-6xl relative overflow-hidden pb-8 before:content-[attr(data-text)attr(data-text)] before:underline before:underline-offset-8 before:decoration-wavy before:decoration-[#1DB954] before:absolute before:whitespace-nowrap before:text-transparent hover:before:animate-wave"
+          >
+            Debutify
+          </h1>
+          <p className="text-lg p-2 pb-4 font-semibold">
+            Create your debut album!
+          </p>
           <button
             type="button"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = `${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=user-read-private+user-read-email+user-top-read`;
             }}
-            className=" text-center inline-flex items-center bg-transparent hover:bg-white text-[#1DB954] font-semibold  py-2 px-4 border border-[#1DB954] hover:border-transparent rounded"
+            className="text-center inline-flex items-center bg-transparent hover:bg-white text-[#1DB954] font-semibold  py-3 px-6 border border-[#1DB954] hover:border-transparent rounded"
           >
-            <span> Login to Spotify</span>
+            <span className="animate-bounce"> Login to Spotify</span>
             <img
-              className="ml-4 h-10 w-10"
+              className="ml-4 h-10 w-10 animate-bounce"
               src="/public/assets/arrow.png"
             ></img>
           </button>
@@ -131,7 +138,7 @@ function App() {
             />
           )}
 
-          <div className="flex flex-col items-center md:pt-10 pt-20">
+          <div className="flex flex-col items-center md:pt-10 pt-20 p-4">
             <div className="flex flex-col items-center">
               <Customize
                 albumName={albumName}

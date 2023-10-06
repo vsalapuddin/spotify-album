@@ -6,12 +6,12 @@ export default function Header({ logout }) {
         <span className="flex uppercase self-center text-xl font-semibold">
           Debutify
         </span>
-        <div className="flex items-center lg:order-2">
+        <div className="flex items-center">
           <button
-            className="text-white uppercase font-semibold rounded-lg text-sm px-4 py-2 mr-2"
+            className="text-white uppercase font-semibold rounded-lg text-sm py-2"
             onClick={logout}
           >
-            Logout
+            <img src="/public/assets/logout.png" className="h-7" />
           </button>
         </div>
       </div>

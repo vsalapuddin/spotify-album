@@ -10,10 +10,10 @@ export default function Tracks({ textColor, tracks }) {
           .trim();
 
         return (
-          <div key={track.name} className="flex justify-center">
+          <div key={track.name} className="flex justify-center pr-4">
             <div className="text-[10px] font-bold pr-2">0{index + 1}.</div>
             <div>
-              <p className="font-bold text-xs md:text-sm uppercase">
+              <p className="font-bold text-xs md:text-sm uppercase ">
                 {cleanedTrackName}
               </p>
               <p className="text-[9px] uppercase font-bold">
