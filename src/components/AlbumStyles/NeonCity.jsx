@@ -22,7 +22,7 @@ export default function NeonCity({ albumName, tracks }) {
         <div className="pt-2 md:pt-12">
           <Tracks tracks={tracks} textColor={"white"} />
         </div>
-        <div className="flex md:justify-start justify-end">
+        <div className="absolute bottom-2 left-0">
           <Score tracks={tracks} />
         </div>
       </motion.div>

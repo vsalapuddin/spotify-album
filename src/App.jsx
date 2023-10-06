@@ -1,11 +1,8 @@
 import "./styles/styles.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 import Customize from "./components/Customize";
-import Tracks from "./components/Tracks";
-import Score from "./components/Score";
 import Header from "./components/Header";
 import NeonCity from "./components/AlbumStyles/NeonCity";
 import Beach from "./components/AlbumStyles/Beach";
@@ -79,7 +76,7 @@ function App() {
   };
 
   return (
-    <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black">
+    <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black h-screen">
       {!token ? (
         <div className="flex flex-col h-screen items-center justify-center">
           <h1 class="text-6xl font-extrabold p-6">Debutify</h1>

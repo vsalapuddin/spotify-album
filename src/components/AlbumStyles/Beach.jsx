@@ -12,7 +12,7 @@ export default function Beach({ albumName, displayName, tracks }) {
         whileInView={{ x: 0 }}
         className={`flex flex-col rounded-sm absolute bg-[url('/assets/beach.jpg')]  h-[300px] w-[300px] md:h-[563px] md:w-[563px]`}
       >
-        <h1 className="whitespace-nowrap self-centertext-sm md:text-2xl font-bold uppercase text-white pt-6">
+        <h1 className="whitespace-nowrap self-center text-sm md:text-xl font-bold uppercase pt-6">
           {albumName}
         </h1>
 
@@ -23,7 +23,7 @@ export default function Beach({ albumName, displayName, tracks }) {
             tracks={tracks}
           />
         </div>
-        <div className="flex md:justify-start justify-end">
+        <div className="absolute bottom-2 left-0">
           <Score tracks={tracks} textColor={"black"} />
         </div>
       </motion.div>

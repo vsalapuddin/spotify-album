@@ -16,7 +16,7 @@ export default function Tracks({ textColor, tracks }) {
               <p className="font-bold text-xs md:text-sm uppercase">
                 {cleanedTrackName}
               </p>
-              <p className="text-xs uppercase">
+              <p className="text-[9px] uppercase font-bold">
                 {`(feat. ${track.artists
                   .map((artist) => artist.name)
                   .join(", ")})`}
