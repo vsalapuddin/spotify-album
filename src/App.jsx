@@ -63,7 +63,6 @@ function App() {
 
       setDisplayName(data.display_name);
       setAlbumName(`${data.display_name.split(" ")[0]}'s Debut Album`);
-      setprofilePic(data.images[0].url);
     };
 
     fetchTopTracks();
@@ -79,8 +78,8 @@ function App() {
     <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black h-screen">
       {!token ? (
         <div className="flex flex-col h-screen items-center justify-center">
-          <h1 class="text-6xl font-extrabold p-6">Debutify</h1>
-          <p class="text-lg p-2">Create your debut album!</p>
+          <h1 className="text-6xl font-extrabold p-6">Debutify</h1>
+          <p className="text-lg p-2">Create your debut album!</p>
           <button
             type="button"
             onClick={(e) => {
@@ -140,6 +139,7 @@ function App() {
                 albumStyleChanger={setAlbumCover}
                 timeLengthChanger={setTermLength}
               />
+              {console.log(termLength)}
             </div>
           </div>
         </div>
