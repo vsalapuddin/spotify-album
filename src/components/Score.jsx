@@ -9,8 +9,9 @@ export default function Score({ tracks }) {
       total += popularity.popularity;
       count++;
     });
+    console.log(100 - total / count);
 
-    return 100 - total / count;
+    return (100 - total / count).toFixed(2);
   }
 
   return (
@@ -22,16 +23,16 @@ export default function Score({ tracks }) {
             tracks
           )}%, transparent ${calculateScore(tracks)}%)`,
         }}
-        className="w-14 h-14 md:w-24 md:h-24 mr-3 flex items-center justify-center rounded-full"
+        className="w-10 h-10 md:w-24 md:h-24 mr-3 flex items-center justify-center rounded-full"
       >
         <div
-          className="p-2 w-12 h-12 md:w-20 md:h-20 rounded-full flex items-center justify-center font-bold"
+          className="text-[8px] md:text-sm w-8 h-8 md:w-20 md:h-20 rounded-full flex items-center justify-center font-bold"
           style={{ background: "black" }}
         >
           {calculateScore(tracks)}
         </div>
       </motion.div>
-      <h1 className="text-sm font-bold uppercase bg-[#1DB954] rounded-lg p-1">
+      <h1 className="text-[8px] md:text-sm font-bold uppercase bg-[#1DB954] rounded-lg p-1">
         Niche Score
       </h1>
     </div>

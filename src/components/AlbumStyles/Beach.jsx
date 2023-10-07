@@ -5,14 +5,14 @@ import Score from "../Score";
 
 export default function Beach({ albumName, displayName, tracks }) {
   return (
-    <div className="flex flex-col items-center pt-10">
+    <div className="flex flex-col items-center pt-10 mr-[100px] md:mr-[230px]">
       <motion.div
-        initial={{ x: -600 }}
+        initial={{ x: -200 }}
         transition={{ duration: 1 }}
         whileInView={{ x: 0 }}
-        className={`flex flex-col rounded-sm absolute bg-[url('/assets/beach.jpg')]  h-[300px] w-[300px] md:h-[563px] md:w-[563px]`}
+        className={`object-scale-down overflow-hidden flex flex-col rounded-sm absolute bg-[url('/assets/beachSm.jpg')] md:bg-[url('/assets/beachLg.jpg')]  h-[240px] w-[240px] md:h-[563px] md:w-[563px]`}
       >
-        <h1 className="whitespace-nowrap self-center text-sm md:text-xl font-bold uppercase pt-6">
+        <h1 className="whitespace-nowrap self-center text-[10px] md:text-sm md:text-xl font-bold uppercase pt-3 md:pt-6">
           {albumName}
         </h1>
 
@@ -29,7 +29,7 @@ export default function Beach({ albumName, displayName, tracks }) {
       </motion.div>
       <img
         src={"/assets/white-vinyl.png"}
-        className="rounded-full w-[250px] md:w-[500px] flex md:ml-[500px]"
+        className="rounded-full  ml-[200px] w-[240px] md:w-[550px] flex md:ml-[550px]"
         alt={"Vinyl"}
       />
       <div className="flex flex-col items-center"></div>

@@ -1,7 +1,9 @@
 export default function Tracks({ textColor, tracks }) {
   return (
     <div className="rounded-lg text-center" style={{ color: textColor }}>
-      <p className="text-[12px] font-bold uppercase">Track List</p>
+      <p className="text-[8px] md:text-[12px] font-bold uppercase">
+        Track List
+      </p>
 
       {tracks.slice(0, 5).map((track, index) => {
         const cleanedTrackName = track.name
@@ -11,12 +13,14 @@ export default function Tracks({ textColor, tracks }) {
 
         return (
           <div key={track.name} className="flex justify-center pr-4">
-            <div className="text-[10px] font-bold pr-2">0{index + 1}.</div>
+            <div className="text-[6px] md:text-[10px] font-bold pr-2">
+              0{index + 1}.
+            </div>
             <div>
-              <p className="font-bold text-xs md:text-sm uppercase ">
+              <p className="font-bold text-[8px] md:text-sm uppercase ">
                 {cleanedTrackName}
               </p>
-              <p className="text-[9px] uppercase font-bold">
+              <p className="text-[5px] md:text-[9px] uppercase font-bold">
                 {`(feat. ${track.artists
                   .map((artist) => artist.name)
                   .join(", ")})`}
