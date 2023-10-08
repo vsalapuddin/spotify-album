@@ -2,6 +2,7 @@ import "./styles/styles.css";
 import axios from "axios";
 import html2canvas from "html2canvas";
 import { useEffect, useRef, useState } from "react";
+import { SocialIcon } from "react-social-icons";
 
 import Customize from "./components/Customize";
 import Header from "./components/Header";
@@ -18,7 +19,8 @@ function App() {
   const [displayName, setDisplayName] = useState("");
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
-  const [albumCover, setAlbumCover] = useState("NeonCity");
+  const [albumCover, setAlbumCover] = useState("Fire");
+  const [isHovered, setIsHovered] = useState(false);
   const printRef = useRef();
 
   useEffect(() => {
@@ -123,14 +125,16 @@ function App() {
       ) : (
         <div className="flex flex-col items-center">
           <Header logout={logout} />
-          <Album
-            albumCover={albumCover}
-            albumName={albumName}
-            displayName={displayName}
-            tracks={tracks}
-            printRef={printRef}
-          />
-          <div className="flex flex-col items-center pl-4 pr-4">
+          <div className="pt-5 md:pt-10">
+            <Album
+              albumCover={albumCover}
+              albumName={albumName}
+              displayName={displayName}
+              tracks={tracks}
+              printRef={printRef}
+            />
+          </div>
+          <div className="flex flex-col items-center pl-4 pr-4 pt-4 md:pt-0">
             <div className="flex flex-col items-center">
               <Customize
                 albumName={albumName}
@@ -140,7 +144,7 @@ function App() {
               />
             </div>
           </div>
-          <div className="flex flex-col items-center pt-10">
+          <div className="flex flex-col items-center">
             <button
               onClick={handleDownloadImage}
               className="bg-black hover:bg-white text-white hover:text-black py-2 px-4 rounded-lg font-bold w-[300px] md:w-[550px] md:text-xl mb-10"
@@ -148,6 +152,16 @@ function App() {
               Save and Share
             </button>
           </div>
+          <div className="text-[12px] md:text-sm">Made by Vince Salapuddin</div>
+          <SocialIcon
+            url="https://vincesalapuddin.com/"
+            target="_blank"
+            fgColor={isHovered ? "#b69eff" : "gray"}
+            bgColor="transparent"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="transition-colors duration-200 ease-in-out"
+          ></SocialIcon>
         </div>
       )}
     </div>

@@ -12,6 +12,7 @@ export default {
       },
       fontFamily: {
         GT_Flexa: ["GT-Flexa", "sans-serif"],
+        adelia: ["ADELIA", "cursive"],
       },
       fontSize: {
         xs: "0.5rem",

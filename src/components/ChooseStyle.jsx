@@ -14,7 +14,6 @@ export default function ChooseStyle({ albumStyleChanger }) {
             value="city"
             className="hidden peer"
             required
-            defaultChecked
           />
           <label
             for="city"
@@ -58,21 +57,20 @@ export default function ChooseStyle({ albumStyleChanger }) {
         </li>
         <li>
           <input
-            onChange={() => albumStyleChanger("Whimsical")}
+            onChange={() => albumStyleChanger("Fire")}
             type="radio"
             id="4"
             name="hosting"
             value="4"
             className="hidden peer"
             required
+            defaultChecked
           />
           <label
             for="4"
             className="inline-flex p-2 md:p-5 w-full border rounded-lg cursor-pointer hover:text-gray-300  peer-checked:border-[#1DB954] peer-checked:text-[#1DB954] text-gray-400 bg-gray-800 hover:bg-gray-700"
           >
-            <div className="text-[12px] md:text-lg font-semibold">
-              Whimsical
-            </div>
+            <div className="text-[12px] md:text-lg font-semibold">Fire</div>
           </label>
         </li>
       </ul>

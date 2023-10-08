@@ -18,7 +18,7 @@ export default function Score({ tracks }) {
   }
 
   return (
-    <div className="flex items-center w-24">
+    <div className="flex items-center w-12 md:w-20 ">
       <CircularProgressbarWithChildren
         value={calculateScore(tracks)}
         background={true}
@@ -30,8 +30,10 @@ export default function Score({ tracks }) {
         })}
       >
         <div className="flex flex-col">
-          <strong>{calculateScore(tracks)}</strong>
-          <strong>Niche</strong>
+          <strong className="text-[8px] md:text-[16px]">
+            {calculateScore(tracks)}
+          </strong>
+          <strong className="text-[8px] md:text-[16px]">Niche</strong>
         </div>
       </CircularProgressbarWithChildren>
     </div>

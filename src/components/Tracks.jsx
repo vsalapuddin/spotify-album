@@ -7,6 +7,7 @@ export default function Tracks({ textColor, tracks }) {
 
       {tracks.slice(0, 5).map((track, index) => {
         const cleanedTrackName = track.name
+          .slice(0, 40)
           .split("(")[0]
           .split("feat.")[0]
           .trim();
