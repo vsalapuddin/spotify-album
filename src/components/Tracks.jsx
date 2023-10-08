@@ -13,14 +13,14 @@ export default function Tracks({ textColor, tracks }) {
 
         return (
           <div key={track.name} className="flex justify-center pr-4">
-            <div className="text-[6px] md:text-[10px] font-bold pr-2">
+            <div className="text-[6px] md:text-[10px] font-bold pr-2 italic">
               0{index + 1}.
             </div>
             <div>
               <p className="font-bold text-[8px] md:text-sm uppercase ">
                 {cleanedTrackName}
               </p>
-              <p className="text-[5px] md:text-[9px] uppercase font-bold">
+              <p className="text-[5px] md:text-[9px] uppercase font-bold italic">
                 {`(feat. ${track.artists
                   .map((artist) => artist.name)
                   .join(", ")})`}

@@ -1,13 +1,11 @@
 import "./styles/styles.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import html2canvas from "html2canvas";
+import { useEffect, useRef, useState } from "react";
 
 import Customize from "./components/Customize";
 import Header from "./components/Header";
-import NeonCity from "./components/AlbumStyles/NeonCity";
-import Beach from "./components/AlbumStyles/Beach";
-import Fantasy from "./components/AlbumStyles/Fantasy";
-import Whimsical from "./components/AlbumStyles/Whimsical";
+import Album from "./components/Album";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
@@ -21,6 +19,7 @@ function App() {
   const [albumName, setAlbumName] = useState("");
   const [termLength, setTermLength] = useState("medium");
   const [albumCover, setAlbumCover] = useState("NeonCity");
+  const printRef = useRef();
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -74,10 +73,29 @@ function App() {
     window.localStorage.removeItem("token");
   };
 
+  const handleDownloadImage = async () => {
+    const element = printRef.current;
+    const canvas = await html2canvas(element);
+
+    const data = canvas.toDataURL("debutAlbum/jpg");
+    const link = document.createElement("a");
+
+    if (typeof link.download === "string") {
+      link.href = data;
+      link.download = "debutAlbum.jpg";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      window.open(data);
+    }
+  };
+
   return (
-    <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black h-screen">
+    <div className="bg-gradient-to-tr from-gray-700 via-gray-900 to-black overflow-y-scroll overflow-x-hidden no-scrollbar">
       {!token ? (
-        <div className="flex flex-col h-screen items-center justify-center">
+        <div className="flex flex-col items-center justify-center h-screen">
           <h1
             data-text="Debutify"
             class="text-6xl relative overflow-hidden pb-8 before:content-[attr(data-text)attr(data-text)] before:underline before:underline-offset-8 before:decoration-wavy before:decoration-[#1DB954] before:absolute before:whitespace-nowrap before:text-transparent hover:before:animate-wave"
@@ -103,42 +121,16 @@ function App() {
           </button>
         </div>
       ) : (
-        <div>
+        <div className="flex flex-col items-center">
           <Header logout={logout} />
-          {albumCover === "NeonCity" && (
-            <NeonCity
-              albumCover={albumCover}
-              albumName={albumName}
-              displayName={displayName}
-              tracks={tracks}
-            />
-          )}
-          {albumCover === "Beach" && (
-            <Beach
-              albumCover={albumCover}
-              albumName={albumName}
-              displayName={displayName}
-              tracks={tracks}
-            />
-          )}
-          {albumCover === "Fantasy" && (
-            <Fantasy
-              albumCover={albumCover}
-              albumName={albumName}
-              displayName={displayName}
-              tracks={tracks}
-            />
-          )}
-          {albumCover === "Whimsical" && (
-            <Whimsical
-              albumCover={albumCover}
-              albumName={albumName}
-              displayName={displayName}
-              tracks={tracks}
-            />
-          )}
-
-          <div className="flex flex-col items-center md:pt-10 pt-20 p-4">
+          <Album
+            albumCover={albumCover}
+            albumName={albumName}
+            displayName={displayName}
+            tracks={tracks}
+            printRef={printRef}
+          />
+          <div className="flex flex-col items-center pl-4 pr-4">
             <div className="flex flex-col items-center">
               <Customize
                 albumName={albumName}
@@ -146,8 +138,15 @@ function App() {
                 albumStyleChanger={setAlbumCover}
                 timeLengthChanger={setTermLength}
               />
-              {console.log(termLength)}
             </div>
+          </div>
+          <div className="flex flex-col items-center pt-10">
+            <button
+              onClick={handleDownloadImage}
+              className="bg-black hover:bg-white text-white hover:text-black py-2 px-4 rounded-lg font-bold w-[300px] md:w-[550px] md:text-xl mb-10"
+            >
+              Save and Share
+            </button>
           </div>
         </div>
       )}
