@@ -1,6 +1,7 @@
 {
   "name": "spotify-album",
   "private": true,
+  "homepage": "https://vsalapuddin.github.io/spotify-album/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
