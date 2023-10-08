@@ -118,7 +118,7 @@ function App() {
             <span className="animate-bounce"> Login to Spotify</span>
             <img
               className="ml-4 h-10 w-10 animate-bounce"
-              src="/public/assets/arrow.png"
+              src="/assets/arrow.png"
             ></img>
           </button>
         </div>
