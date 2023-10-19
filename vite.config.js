@@ -10,5 +10,5 @@ export default defineConfig({
     NodeGlobalsPolyfillPlugin({ buffer: true }),
     tailwindcss(),
   ],
-  base: "/vite-deploy-demo/",
+  base: "/spotify-album/",
 });
