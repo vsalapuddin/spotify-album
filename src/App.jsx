@@ -100,7 +100,7 @@ function App() {
         <div className="flex flex-col items-center justify-center h-screen">
           <h1
             data-text="Debutify"
-            class="text-6xl relative overflow-hidden pb-8 before:content-[attr(data-text)attr(data-text)] before:underline before:underline-offset-8 before:decoration-wavy before:decoration-[#1DB954] before:absolute before:whitespace-nowrap before:text-transparent hover:before:animate-wave"
+            className="text-6xl relative overflow-hidden pb-8 before:content-[attr(data-text)attr(data-text)] before:underline before:underline-offset-8 before:decoration-wavy before:decoration-[#1DB954] before:absolute before:whitespace-nowrap before:text-transparent hover:before:animate-wave"
           >
             Debutify
           </h1>

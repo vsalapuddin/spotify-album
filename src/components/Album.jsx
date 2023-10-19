@@ -8,7 +8,6 @@ export default function Album({
   tracks,
   printRef,
 }) {
-  console.log(albumCover);
   let albumColor = "#0D1333";
   if (albumCover === "NeonCity") {
     albumColor = "#0D1333";
@@ -19,13 +18,16 @@ export default function Album({
   } else if (albumCover === "Fire") {
     albumColor = "#383C45";
   }
+  const imageSm = new Image();
+  imageSm.src = `/assets/${albumCover}Sm.jpg`;
+
   return (
     <div
       ref={printRef}
       className={`flex flex-col items-start justify-center w-[350px] h-[400px] md:w-[795px] md:h-[800px] bg-[${albumColor}] pl-4 rounded-lg border-2`}
     >
       <div
-        className={`border-4 overflow-hidden flex flex-col rounded-sm absolute bg-[url('/assets/${albumCover}Sm.jpg')] md:bg-[url('../public/assets/${albumCover}Lg.jpg')]  h-[240px] w-[240px] md:h-[563px] md:w-[563px]`}
+        className={`border-4 overflow-hidden flex flex-col rounded-sm absolute bg-[${imageSm}] md:bg-[url('/assets/${albumCover}Lg.jpg')]  h-[240px] w-[240px] md:h-[563px] md:w-[563px]`}
       >
         <h1
           className="whitespace-nowrap self-center text-[10px] md:text-sm md:text-xl font-bold uppercase pt-3 md:pt-6"

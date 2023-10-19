@@ -21,10 +21,10 @@ export default function Customize({
         className="flex self-start"
       />
       <ChooseStyle albumStyleChanger={albumStyleChanger} />
-      <div class="mb-6 mt-4 self-start">
+      <div className="mb-6 mt-4 self-start">
         <label
-          for="default-input"
-          class="text-md md:text-xl font-extrabold leading-none tracking-tight text-white"
+          htmlFor="default-input"
+          className="text-md md:text-xl font-extrabold leading-none tracking-tight text-white"
         >
           Name your album
         </label>
@@ -34,7 +34,7 @@ export default function Customize({
           maxLength="30"
           type="text"
           id="default-input"
-          class="mt-4 border text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-[#1DB954] w-full p-2.5 bg-gray-800"
+          className="mt-4 border text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-[#1DB954] w-full p-2.5 bg-gray-800"
         />
       </div>
     </div>
