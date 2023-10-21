@@ -6,7 +6,7 @@ export default function Header({ logout }) {
           Debutify
         </div>
         <button onClick={logout}>
-          <img src="/public/assets/logout.png" className="h-6" />
+          <img src="src/assets/logout.png" className="h-6" />
         </button>
       </div>
     </header>
