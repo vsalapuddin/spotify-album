@@ -8,6 +8,12 @@ import NeonCitySm from "../../src/assets/NeonCitySm.jpg";
 import BeachLg from "../../src/assets/BeachLg.jpg";
 import BeachSm from "../../src/assets/BeachSm.jpg";
 
+import FantasyLg from "../../src/assets/FantasyLg.jpg";
+import FantasySm from "../../src/assets/FantasySm.jpg";
+
+import FireLg from "../../src/assets/FireLg.jpg";
+import FireSm from "../../src/assets/FireSm.jpg";
+
 export default function Album({
   albumCover,
   albumName,
@@ -15,35 +21,67 @@ export default function Album({
   tracks,
   printRef,
 }) {
-  let albumColor = "#0D1333";
-  if (albumCover === "NeonCity") {
-    albumColor = "#0D1333";
-  } else if (albumCover === "Beach") {
-    albumColor = "#7EDAF1";
-  } else if (albumCover === "Fantasy") {
-    albumColor = "#FCC872";
-  } else if (albumCover === "Fire") {
-    albumColor = "#383C45";
-  }
-  const imageSm = new Image();
-  imageSm.src = `src/assets/${albumCover}Lg.jpg`;
+  let albumStyle;
+  let containerColor;
 
-  const albumStyle = `
-  background-image: url('${NeonCityLg}');
-  
-  @media (max-width: 767px) {
-    background-image: url('${NeonCitySm}');
+  if (albumCover === "NeonCity") {
+    albumStyle = `
+      background-image: url('${NeonCityLg}');
+      
+      @media (max-width: 767px) {
+        background-image: url('${NeonCitySm}');
+      }
+    `;
+    containerColor = `
+      background-color: #0D1333;
+    `;
+  } else if (albumCover === "Beach") {
+    albumStyle = `
+      background-image: url('${BeachLg}');
+      
+      @media (max-width: 767px) {
+        background-image: url('${BeachSm}');
+      }
+    `;
+    containerColor = `
+      background-color: #7EDAF1;
+    `;
+  } else if (albumCover === "Fantasy") {
+    albumStyle = `
+      background-image: url('${FantasyLg}');
+      
+      @media (max-width: 767px) {
+        background-image: url('${FantasySm}');
+      }
+    `;
+    containerColor = `
+      background-color: #FCC872;
+    `;
+  } else if (albumCover === "Fire") {
+    albumStyle = `
+      background-image: url('${FireLg}');
+      
+      @media (max-width: 767px) {
+        background-image: url('${FireSm}');
+      }
+    `;
+    containerColor = `
+      background-color: #383C45;
+    `;
   }
-`;
+
+  const AlbumContainer = styled.div`
+    ${containerColor}
+  `;
 
   const AlbumComponent = styled.div`
     ${albumStyle}
   `;
 
   return (
-    <div
+    <AlbumContainer
       ref={printRef}
-      className={`flex flex-col items-start justify-center w-[350px] h-[400px] md:w-[795px] md:h-[800px] bg-[${albumColor}] pl-4 rounded-lg border-2`}
+      className={`flex flex-col items-start justify-center w-[350px] h-[400px] md:w-[795px] md:h-[800px] pl-4 rounded-lg border-2`}
     >
       <AlbumComponent
         className={`border-4 overflow-hidden flex flex-col rounded-sm absolute h-[240px] w-[240px] md:h-[563px] md:w-[563px]`}
@@ -82,6 +120,6 @@ export default function Album({
         src={`src/assets/Spotify.png`}
         className="rounded-full ml-[600px] w-[150px] flex mb-[-55px]"
       />
-    </div>
+    </AlbumContainer>
   );
 }
