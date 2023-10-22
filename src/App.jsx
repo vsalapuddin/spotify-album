@@ -10,7 +10,7 @@ import Album from "./components/Album";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
-  const REDIRECT_URI = "http://localhost:5173";
+  const REDIRECT_URI = "https://spotify-album-three.vercel.app/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 

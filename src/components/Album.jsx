@@ -2,7 +2,11 @@ import Tracks from "./Tracks";
 import Score from "./Score";
 import styled from "styled-components";
 
-import NeonCity from "../../src/assets/NeonCityLg.jpg";
+import NeonCityLg from "../../src/assets/NeonCityLg.jpg";
+import NeonCitySm from "../../src/assets/NeonCitySm.jpg";
+
+import BeachLg from "../../src/assets/BeachLg.jpg";
+import BeachSm from "../../src/assets/BeachSm.jpg";
 
 export default function Album({
   albumCover,
@@ -25,10 +29,10 @@ export default function Album({
   imageSm.src = `src/assets/${albumCover}Lg.jpg`;
 
   const albumStyle = `
-  background-image: url('${NeonCity}');
+  background-image: url('${NeonCityLg}');
   
   @media (max-width: 767px) {
-    background-image: url('src/assets/${NeonCity}Sm.jpg');
+    background-image: url('${NeonCitySm}');
   }
 `;
 
