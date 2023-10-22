@@ -8,6 +8,8 @@ import Customize from "./components/Customize";
 import Header from "./components/Header";
 import Album from "./components/Album";
 
+import Arrow from "./assets/arrow.png";
+
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
   const REDIRECT_URI = "https://spotify-album-three.vercel.app/";
@@ -116,10 +118,7 @@ function App() {
             className="text-center inline-flex items-center bg-transparent hover:bg-white text-[#1DB954] font-semibold  py-3 px-6 border border-[#1DB954] hover:border-transparent rounded"
           >
             <span className="animate-bounce"> Login to Spotify</span>
-            <img
-              className="ml-4 h-10 w-10 animate-bounce"
-              src="src/assets/arrow.png"
-            ></img>
+            <img className="ml-4 h-10 w-10 animate-bounce" src={Arrow}></img>
           </button>
         </div>
       ) : (

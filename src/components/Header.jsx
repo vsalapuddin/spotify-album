@@ -1,3 +1,5 @@
+import Logout from "../../src/assets/logout.png";
+
 export default function Header({ logout }) {
   return (
     <header className="w-screen p-3 rounded-lg bg-[#181717]">
@@ -6,7 +8,7 @@ export default function Header({ logout }) {
           Debutify
         </div>
         <button onClick={logout}>
-          <img src="src/assets/logout.png" className="h-6" />
+          <img src={Logout} className="h-6" />
         </button>
       </div>
     </header>

@@ -4,15 +4,20 @@ import styled from "styled-components";
 
 import NeonCityLg from "../../src/assets/NeonCityLg.jpg";
 import NeonCitySm from "../../src/assets/NeonCitySm.jpg";
-
 import BeachLg from "../../src/assets/BeachLg.jpg";
 import BeachSm from "../../src/assets/BeachSm.jpg";
-
 import FantasyLg from "../../src/assets/FantasyLg.jpg";
 import FantasySm from "../../src/assets/FantasySm.jpg";
-
 import FireLg from "../../src/assets/FireLg.jpg";
 import FireSm from "../../src/assets/FireSm.jpg";
+
+import BeachVinyl from "../../src/assets/BeachVinyl.png";
+import FantasyVinyl from "../../src/assets/FantasyVinyl.png";
+import NeonCityVinyl from "../../src/assets/NeonCityVinyl.png";
+import FireVinyl from "../../src/assets/FireVinyl.png";
+
+import Presented from "../../src/assets/presented.png";
+import Spotify from "../../src/assets/Spotify.png";
 
 export default function Album({
   albumCover,
@@ -23,6 +28,7 @@ export default function Album({
 }) {
   let albumStyle;
   let containerColor;
+  let vinyl;
 
   if (albumCover === "NeonCity") {
     albumStyle = `
@@ -35,6 +41,7 @@ export default function Album({
     containerColor = `
       background-color: #0D1333;
     `;
+    vinyl = NeonCityVinyl;
   } else if (albumCover === "Beach") {
     albumStyle = `
       background-image: url('${BeachLg}');
@@ -46,6 +53,7 @@ export default function Album({
     containerColor = `
       background-color: #7EDAF1;
     `;
+    vinyl = BeachVinyl;
   } else if (albumCover === "Fantasy") {
     albumStyle = `
       background-image: url('${FantasyLg}');
@@ -57,6 +65,7 @@ export default function Album({
     containerColor = `
       background-color: #FCC872;
     `;
+    vinyl = FantasyVinyl;
   } else if (albumCover === "Fire") {
     albumStyle = `
       background-image: url('${FireLg}');
@@ -68,6 +77,7 @@ export default function Album({
     containerColor = `
       background-color: #383C45;
     `;
+    vinyl = FireVinyl;
   }
 
   const AlbumContainer = styled.div`
@@ -102,14 +112,11 @@ export default function Album({
           <Tracks tracks={tracks} textColor={"white"} />
         </div>
         <div className="flex self-end pr-0.5 mt-12 md:pr-2 md:mt-40">
-          <img
-            src={`src/assets/presented.png`}
-            className="w-[45px] md:w-[120px]"
-          />
+          <img src={Presented} className="w-[45px] md:w-[120px]" />
         </div>
       </AlbumComponent>
       <img
-        src={`src/assets/${albumCover}Vinyl.png`}
+        src={vinyl}
         className="rounded-full ml-[100px] w-[240px] md:w-[625px] flex md:ml-[180px]"
         alt={"Vinyl"}
       />
@@ -117,7 +124,7 @@ export default function Album({
         <Score tracks={tracks} />
       </div>
       <img
-        src={`src/assets/Spotify.png`}
+        src={Spotify}
         className="rounded-full ml-[600px] w-[150px] flex mb-[-55px]"
       />
     </AlbumContainer>
