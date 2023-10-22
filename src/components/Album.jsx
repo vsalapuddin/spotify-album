@@ -25,10 +25,10 @@ export default function Album({
   imageSm.src = `src/assets/${albumCover}Lg.jpg`;
 
   const albumStyle = `
-  background-image: url('src/assets/${albumCover}Lg.jpg');
+  background-image: url('${NeonCity}');
   
   @media (max-width: 767px) {
-    background-image: url('src/assets/${albumCover}Sm.jpg');
+    background-image: url('src/assets/${NeonCity}Sm.jpg');
   }
 `;
 
