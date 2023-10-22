@@ -12,7 +12,7 @@ import Arrow from "./assets/arrow.png";
 
 function App() {
   const CLIENT_ID = "e257d4993db149c58a1214001626e4ee";
-  const REDIRECT_URI = "https://spotify-album-three.vercel.app/";
+  const REDIRECT_URI = "https://debutify.vercel.app/";
   const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
   const RESPONSE_TYPE = "token";
 
