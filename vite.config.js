@@ -10,5 +10,4 @@ export default defineConfig({
     NodeGlobalsPolyfillPlugin({ buffer: true }),
     tailwindcss(),
   ],
-  base: "/spotify-album/",
 });
