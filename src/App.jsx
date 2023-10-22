@@ -148,7 +148,7 @@ function App() {
               onClick={handleDownloadImage}
               className="bg-black hover:bg-white text-white hover:text-black py-2 px-4 rounded-lg font-bold w-[300px] md:w-[550px] md:text-xl mb-10"
             >
-              Save and Share
+              Download
             </button>
           </div>
           <div className="text-[12px] md:text-sm">Made by Vince Salapuddin</div>

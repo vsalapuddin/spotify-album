@@ -125,7 +125,7 @@ export default function Album({
       </div>
       <img
         src={Spotify}
-        className="rounded-full ml-[600px] w-[150px] flex mb-[-55px]"
+        className="absolute md:relative md:mt-[0px] mt-[350px] rounded-full ml-[225px] md:ml-[600px] w-[100px] md:w-[150px] flex md:mb-[-55px]"
       />
     </AlbumContainer>
   );
